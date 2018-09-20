@@ -43,5 +43,5 @@ update:
 
 releases:
 - name: ceph-objectstorage-broker
-  version: 1.0.0
+  version: 1
   # url:

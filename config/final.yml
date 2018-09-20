@@ -1,5 +1,6 @@
 ---
 blobstore:
   provider: local
-  options: {}
+  options:
+    blobstore_path: /tmp/cosb-blobs
 final_name: ceph-objectstorage-broker

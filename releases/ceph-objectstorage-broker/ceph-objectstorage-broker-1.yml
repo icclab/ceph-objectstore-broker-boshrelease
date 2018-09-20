@@ -1,0 +1,19 @@
+name: ceph-objectstorage-broker
+version: "1"
+commit_hash: 13fb9b1
+uncommitted_changes: false
+jobs:
+- name: ceph-objectstorage-broker
+  version: 64fe39d7a3ec7b9887a3760303ec05fe93ab16d0
+  fingerprint: 64fe39d7a3ec7b9887a3760303ec05fe93ab16d0
+  sha1: 8a993fb98ba8c783f0daeb32275fbd85f5e9b375
+packages:
+- name: ceph-objectstorage-broker
+  version: 08e0824a98df1f7b9bfd0e2b3711c67e5c8544ac
+  fingerprint: 08e0824a98df1f7b9bfd0e2b3711c67e5c8544ac
+  sha1: 675b6c30e83aa8cca76b8949914f841628e65f59
+  dependencies: []
+license:
+  version: 7302a7adc233f13e29f4e73f89a8b812ef258428
+  fingerprint: 7302a7adc233f13e29f4e73f89a8b812ef258428
+  sha1: 17d2bf7714e6472f1365c3c3f046fa1fb26650ff

@@ -1,0 +1,7 @@
+set -eux
+
+mkdir $BOSH_INSTALL_TARGET/bin
+mkdir $BOSH_INSTALL_TARGET/bin/brokerConfig
+
+cp main $BOSH_INSTALL_TARGET/bin
+cp service-config.json $BOSH_INSTALL_TARGET/bin/brokerConfig

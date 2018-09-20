@@ -1,0 +1,5 @@
+check process ceph-objectstorage-broker
+  with pidfile /var/vcap/sys/run/ceph-objectstorage-broker/pid
+  start program "/var/vcap/jobs/ceph-objectstorage-broker/bin/cosb_ctl start"
+  stop program "/var/vcap/jobs/ceph-objectstorage-broker/bin/cosb_ctl stop"
+  group vcap

@@ -1,0 +1,33 @@
+---
+name: ceph-objectstorage-broker
+
+packages: ["ceph-objectstorage-broker"]
+
+templates:
+  cosb_ctl: bin/cosb_ctl
+
+properties:
+  broker.env.rados_access_key:
+    description: ""
+  broker.env.rados_secret_key:
+    description: ""
+  broker.env.rados_endpoint:
+    default: "cf-go-broker"
+    description: ""
+  broker.env.rados_admin:
+    description: ""
+  broker.env.broker_username:
+    default: admin
+    description: ""
+  broker.env.broker_password:
+    description: ""
+  broker.env.s3_path:
+    default: "/"
+  broker.env.swift_path:
+    default: "/auth/v1.0"
+  broker.env.bucket_name:
+    default: "ceph-objectstore-broker"
+  broker.env.instance_limit: 
+    default: 2000
+  broker.env.instance_prefix:
+    default: "instances/"

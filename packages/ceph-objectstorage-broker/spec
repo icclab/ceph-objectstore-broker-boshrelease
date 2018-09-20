@@ -1,0 +1,8 @@
+---
+name: ceph-objectstorage-broker
+
+dependencies: []
+
+files:
+- main
+- service-config.json

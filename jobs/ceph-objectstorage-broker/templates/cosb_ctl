@@ -1,0 +1,45 @@
+#!/bin/bash
+set -eux
+
+RUN_DIR=/var/vcap/sys/run/ceph-objectstorage-broker
+LOG_DIR=/var/vcap/sys/log/ceph-objectstorage-broker
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+    echo $$ > $PIDFILE
+
+    cd /var/vcap/packages/ceph-objectstorage-broker/bin
+    
+    # Get env vars from properties
+    export RADOS_ACCESS_KEY=<%= p('broker.env.rados_access_key') %>
+    export RADOS_SECRET_KEY=<%= p('broker.env.rados_secret_key') %>
+    export RADOS_ENDPOINT=<%= p('broker.env.rados_endpoint') %>
+    export RADOS_ADMIN=<%= p('broker.env.rados_admin') %>
+    export BROKER_USERNAME=<%= p('broker.env.broker_username') %>
+    export BROKER_PASSWORD=<%= p('broker.env.broker_password') %>
+    export S3_PATH=<%= p('broker.env.s3_path') %>
+    export SWIFT_PATH=<%= p('broker.env.swift_path') %>
+    export BUCKET_NAME=<%= p('broker.env.bucket_name') %>
+    export INSTANCE_LIMIT=<%= p('broker.env.instance_limit') %>
+    export INSTANCE_PREFIX=<%= p('broker.env.instance_prefix') %>
+
+    # Start the broker  
+    ./main \
+    1>>$LOG_DIR/ceph-objectstorage-broker.stdout.log \
+    2>>$LOG_DIR/ceph-objectstorage-broker.stderr.log
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+    ;;
+
+  *)
+    echo "Usage: cosb_ctl {start|stop}" 
+    ;;
+
+esac

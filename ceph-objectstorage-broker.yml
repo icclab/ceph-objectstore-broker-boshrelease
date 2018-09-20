@@ -1,0 +1,47 @@
+---
+name: ceph-objectstorage-broker
+
+instance_groups:
+- name: ceph-objectstorage-broker
+  azs: [z1]
+  instances: 1
+  vm_type: minimal
+  stemcell: default
+  networks: [{name: default}]
+  jobs:
+  - name: ceph-objectstorage-broker
+    release: ceph-objectstorage-broker
+    properties:
+      broker:
+        env:
+          rados_access_key: ((rados_access_key))
+          rados_secret_key: ((rados_secret_key))
+          rados_endpoint: ((rados_endpoint))
+          rados_admin: ((rados_admin))
+          broker_username: ((broker_username))
+          broker_password: ((broker_password))
+          s3_path: ((s3_path))
+          swift_path: ((swift_path))
+          bucket_name: ((bucket_name))
+          instance_limit: ((instance_limit))
+          instance_prefix: ((instance_prefix))
+
+variables:
+- name: broker_password
+  type: password
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: latest
+
+update:
+  canaries: 1
+  canary_watch_time: 1000-120000
+  update_watch_time: 1000-120000
+  max_in_flight: 1
+
+releases:
+- name: ceph-objectstorage-broker
+  version: create
+  url: .

@@ -25,6 +25,56 @@ instance_groups:
           bucket_name: ((bucket_name))
           instance_limit: ((instance_limit))
           instance_prefix: ((instance_prefix))
+        service:
+          id: "d70715af-9d44-441e-ad8e-229c25491c5f"
+          name: "Ceph-Object-Storage"
+          description: "Swift and S3 object storage service based on a Ceph backend."
+          tags:
+          - "Object Storage"
+          - "Swift"
+          - "S3"
+          - "1000 Buckets/Containers"
+          metadata:
+            displayName: "Ceph Object Storage"
+            longDescription: "Swift and S3 object storage service based on a Ceph backend"
+            providerDisplayName: "ZHAW"
+          plan_updateable: true
+          plans:
+          - id: "7e4804d1-91f2-4f48-aa26-cb51a8fef225"
+            name: "100MB"
+            description: "100MB object storage"
+            free: true
+            metadata:
+              displayName: "100MB"
+              quotaMB: "100"
+          - id: "d8ff5e56-99a2-4a83-b938-2046a13d4b6e"
+            name: "500MB"
+            description: "500MB object storage"
+            free: true
+            metadata:
+              displayName: "500MB"
+              quotaMB: "500"
+          - id: "58572e37-bbfc-4033-9ff8-b4e35b350858"
+            name: "1GB"
+            description: "1GB object storage"
+            free: true
+            metadata:
+              displayName: "1GB"
+              quotaMB: "1000"
+          - id: "959cd029-341c-40e4-9b03-0351e85064c0"
+            name: "2GB"
+            description: "2GB object storage"
+            free: true
+            metadata:
+              displayName: "2GB"
+              quotaMB: "2000"
+          - id: "92b7c9fd-21b9-4fe3-a3bc-082559bc5588"
+            name: "5GB"
+            description: "5GB object storage"
+            free: true
+            metadata:
+              displayName: "5GB"
+              quotaMB: "5000"
 
 variables:
 - name: broker_password
@@ -43,5 +93,4 @@ update:
 
 releases:
 - name: ceph-objectstorage-broker
-  version: 1
-  # url:
+  version: latest

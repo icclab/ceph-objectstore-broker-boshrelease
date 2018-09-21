@@ -1,0 +1,3 @@
+[submodule "src/go/src/github.engineering.zhaw.ch/kaio/ceph-objectstore-broker"]
+	path = src/go/src/github.engineering.zhaw.ch/kaio/ceph-objectstore-broker
+	url = https://github.com/icclab/ceph-objectstore-broker

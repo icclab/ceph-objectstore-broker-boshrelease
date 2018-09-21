@@ -5,6 +5,8 @@ RUN_DIR=/var/vcap/sys/run/ceph-objectstorage-broker
 LOG_DIR=/var/vcap/sys/log/ceph-objectstorage-broker
 PIDFILE=${RUN_DIR}/pid
 
+cp /var/vcap/jobs/ceph-objectstorage-broker/bin/service-config.json /var/vcap/packages/ceph-objectstorage-broker/bin/brokerConfig/
+
 case $1 in
 
   start)
@@ -13,7 +15,7 @@ case $1 in
     echo $$ > $PIDFILE
 
     cd /var/vcap/packages/ceph-objectstorage-broker/bin
-    
+
     # Get env vars from properties
     export RADOS_ACCESS_KEY=<%= p('broker.env.rados_access_key') %>
     export RADOS_SECRET_KEY=<%= p('broker.env.rados_secret_key') %>

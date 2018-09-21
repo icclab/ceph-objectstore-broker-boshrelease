@@ -1,8 +1,8 @@
 ---
 name: ceph-objectstorage-broker
 
-dependencies: []
+dependencies:
+- golang-1.10-linux
 
 files:
-- main
-- service-config.json
+- go/**/*

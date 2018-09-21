@@ -1,0 +1,31 @@
+[
+  {
+    "id": "<%= p('broker.service.id') %>",
+    "name": "<%= p('broker.service.name') %>",
+    "description": "<%= p('broker.service.description') %>",
+    "bindable": true,
+    "instances_retrievable": false,
+    "bindings_retrievable": false,
+    "tags": [<% p('broker.service.tags').each do |tag| %>
+      "<%= tag %>"<%= tag == p('broker.service.tags').last ? '' : ',' %><% end %>
+    ],
+    "plan_updateable": <%= p('broker.service.plan_updateable') %>,
+    "plans": [<% p('broker.service.plans').each do |plan| %>
+      {
+        "id": "<%= plan['id'] %>",
+        "name": "<%= plan['name'] %>",
+        "description": "<%= plan['description'] %>",
+        "free": <%= plan['free'] %>,
+        "metadata": {
+          "displayName": "<%= plan['metadata']['displayName'] %>",
+          "quotaMB": "<%= plan['metadata']['quotaMB'] %>"         
+        }
+      }<%= plan == p('broker.service.plans').last ? '' : ',' %><% end %>
+    ],
+    "metadata":{
+      "displayName": "<%= p('broker.service.metadata')['displayName'] %>",
+      "longDescription": "<%= p('broker.service.metadata')['longDescription'] %>",
+      "providerDisplayName": "<%= p('broker.service.metadata')['providerDisplayName'] %>"
+    }
+  }
+]

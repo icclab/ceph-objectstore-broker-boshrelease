@@ -1,7 +1,12 @@
 set -eux
 
+#Compile
+cd go
+source /var/vcap/packages/golang-1.10-linux/bosh/compile.env
+go build -o main -v github.engineering.zhaw.ch/kaio/ceph-objectstore-broker
+
+#Copy binary
 mkdir $BOSH_INSTALL_TARGET/bin
 mkdir $BOSH_INSTALL_TARGET/bin/brokerConfig
 
 cp main $BOSH_INSTALL_TARGET/bin
-cp service-config.json $BOSH_INSTALL_TARGET/bin/brokerConfig

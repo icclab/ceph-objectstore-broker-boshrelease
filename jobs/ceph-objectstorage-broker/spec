@@ -4,6 +4,7 @@ name: ceph-objectstorage-broker
 packages: ["ceph-objectstorage-broker"]
 
 templates:
+  service-config.json.erb: bin/service-config.json
   cosb_ctl: bin/cosb_ctl
 
 properties:
@@ -31,3 +32,21 @@ properties:
     default: 2000
   broker.env.instance_prefix:
     default: "instances/"
+
+  broker.service.id:
+    description: "ID for the service"
+  broker.service.name:
+    description: "Name of the service"
+  broker.service.description:
+    description: "Description of the service"
+  broker.service.tags:
+    default: ""
+    description: "Tags applied to the service"
+  broker.service.metadata:
+    description: ""
+  broker.service.plan_updateable:
+    default: true
+    description: ""
+  broker.service.plans:
+    description: "All the plans provided by the service"  
+  

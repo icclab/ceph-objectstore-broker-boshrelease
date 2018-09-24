@@ -20,4 +20,4 @@ Once you have your `vars-file.yml` setup you are ready to deploy, however, you m
 `ceph-objectstorage-broker.yml` file. Please note that the `displayName` and `quotaMB` fields in the metadata of each plan are **required**.
 
 You are also recommended to ensure the source code of the broker is updated to the latest version, which you can do by running `git submodule update --remote`.
-Once you are ready to deploy you can do so by `./deploy.sh my-deployment-name`.
+Once you are ready to deploy you can do so by `./deploy.sh my-deployment-name`. Remember that the supplied deployment name must match the name in the manifest.

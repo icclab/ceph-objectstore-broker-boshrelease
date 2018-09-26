@@ -11,9 +11,6 @@ service, and so it requires a number of variables including the gateway's endpoi
 To provide the required information you will need a file called `vars-file.yml`. A template for this file called `vars-file-template.yml` is available, and so can simply
 be copied, renamed and then the details filled in.
 
-Lastly, you will need [Go](https://golang.org/project/) installed as its used in the deployment script and in case you want to build yourself or run the integration tests.
-The broker has been developed with [Go V1.10.1](https://golang.org/doc/go1.10). It should theoretically work with older releases, but keep in mind that is not verified.
-
 ## Deployment
 
 Once you have your `vars-file.yml` setup you are ready to deploy, however, you might want to change the broker plans and service settings, which you can change in the

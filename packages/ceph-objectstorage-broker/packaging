@@ -3,7 +3,7 @@ set -eux
 #Compile
 cd go
 source /var/vcap/packages/golang-1.10-linux/bosh/compile.env
-go build -o main -v github.engineering.zhaw.ch/kaio/ceph-objectstore-broker
+go build -o main -v github.com/icclab/ceph-objectstore-broker
 
 #Copy binary
 mkdir $BOSH_INSTALL_TARGET/bin

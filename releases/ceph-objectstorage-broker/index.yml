@@ -1,6 +1,8 @@
 builds:
   13be440b-7fd6-410d-4a96-9cc1308ef03b:
     version: 1.1.0
+  19d08220-a543-4d69-48ba-5d74b225e375:
+    version: 1.1.2
   640fd692-ab92-4c73-5cc7-7c42c039b060:
     version: "1"
   e6a988b6-9cd2-4474-6a3b-427f1f92a951:

@@ -32,6 +32,8 @@ properties:
     default: 2000
   broker.env.instance_prefix:
     default: "instances/"
+  broker.env.use_https:
+    default: "true"
 
   broker.service.id:
     description: "ID for the service"

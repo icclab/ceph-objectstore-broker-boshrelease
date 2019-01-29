@@ -25,6 +25,7 @@ instance_groups:
           bucket_name: ((bucket_name))
           instance_limit: ((instance_limit))
           instance_prefix: ((instance_prefix))
+          use_https: ((use_https))
         service:
           id: "d70715af-9d44-441e-ad8e-229c25491c5f"
           name: "Ceph-Object-Storage"

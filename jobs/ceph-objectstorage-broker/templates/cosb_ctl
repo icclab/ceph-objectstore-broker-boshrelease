@@ -28,6 +28,7 @@ case $1 in
     export BUCKET_NAME=<%= p('broker.env.bucket_name') %>
     export INSTANCE_LIMIT=<%= p('broker.env.instance_limit') %>
     export INSTANCE_PREFIX=<%= p('broker.env.instance_prefix') %>
+    export USE_HTTPS=<%= p('broker.env.use_https') %>
 
     # Start the broker  
     ./main \

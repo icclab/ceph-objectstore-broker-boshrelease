@@ -1,0 +1,25 @@
+name: ceph-objectstorage-broker
+version: 1.2.0
+commit_hash: ae82c82
+uncommitted_changes: false
+jobs:
+- name: ceph-objectstorage-broker
+  version: 7b09f259df395b57c80d56a140fc89f0a4eb72f4
+  fingerprint: 7b09f259df395b57c80d56a140fc89f0a4eb72f4
+  sha1: 1638e3d78a13c40ccb7e771919acd6c886499224
+packages:
+- name: ceph-objectstorage-broker
+  version: 38344505160a724fd23e0ec64fff66086a31653f
+  fingerprint: 38344505160a724fd23e0ec64fff66086a31653f
+  sha1: ca43362cdd164e4f585823dc6812167163167a1a
+  dependencies:
+  - golang-1.10-linux
+- name: golang-1.10-linux
+  version: 81eb736caa18470925321b1222e07315f1bc860c
+  fingerprint: 81eb736caa18470925321b1222e07315f1bc860c
+  sha1: d5619a1d2df5efbce5eda7fc342f19f6f2f32a0e
+  dependencies: []
+license:
+  version: a3cb7ca00ffbca78349822779a1f4f51b4bd3865
+  fingerprint: a3cb7ca00ffbca78349822779a1f4f51b4bd3865
+  sha1: 9bb2acf9a0fc0ee1ffac99695ebfaa8a56844bab

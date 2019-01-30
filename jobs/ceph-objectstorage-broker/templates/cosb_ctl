@@ -12,7 +12,6 @@ case $1 in
   start)
     mkdir -p $RUN_DIR $LOG_DIR
     chown -R vcap:vcap $RUN_DIR $LOG_DIR
-    echo $$ > $PIDFILE
 
     cd /var/vcap/packages/ceph-objectstorage-broker/bin
 
@@ -33,7 +32,9 @@ case $1 in
     # Start the broker  
     ./main \
     1>>$LOG_DIR/ceph-objectstorage-broker.stdout.log \
-    2>>$LOG_DIR/ceph-objectstorage-broker.stderr.log
+    2>>$LOG_DIR/ceph-objectstorage-broker.stderr.log &
+    echo $! > $PIDFILE
+    wait #Block for the broker so that BOSH knows we ran successfully
     ;;
 
   stop)

@@ -16,5 +16,5 @@ be copied, renamed and then the details filled in.
 Once you have your `vars-file.yml` setup you are ready to deploy, however, you might want to change the broker plans and service settings, which you can change in the
 `ceph-objectstorage-broker.yml` file. Please note that the `displayName` and `quotaMB` fields in the metadata of each plan are **required**.
 
-You are also recommended to ensure the source code of the broker is updated to the latest version, which you can do by running `git submodule update --remote`.
+Now to get the source code run `git submodule update --init --recursive`, then `bosh cr` and `bosh ur` to create and upload the release.
 Once you are ready to deploy you can do so by `./deploy.sh my-deployment-name`. Remember that the supplied deployment name must match the name in the manifest.

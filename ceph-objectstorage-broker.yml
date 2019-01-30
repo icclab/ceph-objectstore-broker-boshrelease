@@ -94,4 +94,5 @@ update:
 
 releases:
 - name: ceph-objectstorage-broker
+  url: https://github.com/icclab/ceph-objectstore-broker-boshrelease/releases/download/V1.2.1/cosb-release-1.2.1.tgz
   version: latest
